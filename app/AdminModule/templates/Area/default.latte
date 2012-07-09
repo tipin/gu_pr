@@ -1,0 +1,15 @@
+{block content}
+<h2>Mnou spravované lezecké oblastí</h2>
+
+{if $areas->count() > 1}
+<table class="areas">
+{foreach $areas as $area}
+    <tr>
+        <td><a n:href="Area:edit $area->id">{$area->name}</a></td>
+    </tr>
+{/foreach}
+</table>
+
+{else}
+<p>Dosud nespravujete žádnou oblast.</p>
+{/if}

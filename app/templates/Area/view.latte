@@ -1,0 +1,74 @@
+{block #js}
+ <script type="text/javascript" src="http://api4.mapy.cz/loader.js"></script>
+ <script type="text/javascript">Loader.load()</script>
+ <script type="text/javascript">
+  var lat = {$area->lat};
+  var lng = {$area->lng};
+  var area_name = {$area->name};
+ </script>
+ 
+
+{/block}
+
+{block #content}
+
+  <div id="nav2">
+   <ul>
+    <li class="{if $area->area_type==rock}open{else}close{/if}"><a n:href="list rock">Skalní oblasti</a></li>
+    <li class="{if $area->area_type==boulder}open{else}close{/if}"><a n:href="list boulder">Boulder oblasti</a></li>
+    <li class="{if $area->area_type==wall}open{else}close{/if}"><a n:href="list wall">Umělé lezecké stěny</a></li>
+    <li class="{if $area->area_type==wal}open{else}close{/if}"><a n:href="list wall">Zimní lezení</a></li>
+   </ul>
+  </div>
+  <div id="nav1">
+   <ul>
+    <li class="{ifCurrent Area:view $area->id}open{else}close{/ifCurrent}"><a n:href="view $area->id">Popis</a></li>
+    <li class="{ifCurrent Area:routes $area->id}open{else}close{/ifCurrent}"><a n:href="routes $area->id">Cesty</a></li>
+    <li class="{ifCurrent Area:comments $area->id}open{else}close{/ifCurrent}"><a n:href="comments $area->id">Komentáře</a></li>
+    <li class="{ifCurrent Area:list}open{else}close{/ifCurrent}"><a n:href="list">Fotky</a></li>
+   </ul>
+  </div>
+  <div id="nav0"></div>
+</div>
+<div id="section">
+  <div class="bl" style="padding-right: 3%; float: left;">
+    <h2>{$area->name}</h2>
+    <p><strong>Popis | </strong>{$area->description}</p>
+    <p><strong>Přístup | </strong>{$area->access}</p>
+    <p><strong>Souřadnice GPS | </strong>N {$area->lat} E {$area->lng}</p>
+    <p><strong>Materiál | </strong>hornina</p>
+    <p><strong>Pocet cest v oblasti | </strong>{$area->related('route')->count()} </p>
+  </div>
+  <div class="bl" style="float: right;">
+   <div id="maparea" style="width: 100%; height: 23em;"></div>
+   <script type="text/javascript" src="{$basePath}/js/map_area.js"></script> 
+  </div>
+  <div class="articles">
+  
+    <h2>Články o oblasti</h2>
+
+  </div>
+{*
+{if $rocks->count() > 1}
+{foreach $rocks as $rock}
+<h3>{$rock->name}</h3>
+<table class="routes">
+    {foreach $rock->related('route')->order('order_number') as $route}
+    <tr>
+        <td>{$route->name}</td>
+    </tr>
+    {/foreach}
+</table>
+{/foreach}
+
+{else}
+<p>Prozatím tu žádné cesty nemáme. Na nápravě se usilovně pracuje.</p>
+{/if}
+
+<h2>Komentáře</h2>
+<!--pak vyměnit závorky, házelo mi to jinak chybu[control comments]-->
+
+*}
+
+</div>
+{/block}

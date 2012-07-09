@@ -1,0 +1,12 @@
+{block content}
+
+<div id="nav0"></div>
+</div>
+<div id="section">
+<h2>Profil uživatele: {$user->getIdentity()->username}</h2>
+<h3>Moje údaje:</h3>
+{control accountForm}
+<h3>Změna hesla:</h3>
+{control passwordForm}
+</div>
+{/block}

@@ -1,0 +1,14 @@
+<div id="comments">  
+    <div n:foreach="$flashes as $flash" class="flash {$flash->type}">
+        {$flash->message}
+    </div> 
+    {foreach $comments as $comment}
+    <div class="comment" id="comment-{$comment->id}">
+        {$comment->username}
+        <span n:if="$comment->user_id"> - {$comment->user->email}</span> - {$comment->posted|date:'%H:%M %d.%m.%Y'}<br />
+        {$comment->text}<br /><br />
+    </div>
+    {/foreach}
+    
+    {control addCommentForm}
+</div>

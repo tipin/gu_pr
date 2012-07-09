@@ -1,0 +1,15 @@
+{block content}
+
+<div id="nav0"></div>
+</div>
+<div id="section">
+
+  <div id="forum">
+    <h2>Diskuze</h2>
+      {foreach $forums as $forum}
+        <p><strong>{$forum->user_id} </strong><span style="float: right;">{$forum->posted|date:'%H:%M | %d.%m.%Y'}</span><br />
+        {$forum->content}</p>
+      {/foreach}
+  </div>
+</div>
+{/block}

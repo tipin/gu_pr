@@ -1,0 +1,282 @@
+/* Pruvodce lezením na Jesenicku */
+
+html {overflow-y: scroll;}
+
+body{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+background: #000000 url(../img/bg.jpg) no-repeat center top;
+text-align: center;
+}
+
+p{
+color: #323232;
+font-size: 10pt;
+text-align: justify;
+}
+
+a{
+color: #ffad00;
+font-size: 10pt;
+text-decoration: none;
+}
+
+a:hover{
+color: #ffad00;
+text-decoration: underline;
+}
+
+h1{
+font-family: Arial, sans-serif;
+color: #ffad00;
+margin: 0;
+font-size: 22pt; /*17pt;*/
+font-weight: normal;
+text-shadow: 0 0 2px #FFFFFF;
+
+}
+
+h2{
+font-family: Arial, sans-serif;
+font-size: 18pt;
+font-weight: normal;
+margin: 0.5em 0 0 0;
+}
+
+h3{
+font-family: Arial, sans-serif;
+font-size: 14pt;
+font-weight: bolt;
+margin: 1em 0 0 0.5em;
+}
+
+img{
+border: 0;
+}
+
+#page{
+width: 900px;
+text-align: left;
+margin-left: auto;
+margin-right: auto;
+}
+
+#login p{
+float: right;
+color: #ffad00;
+margin: 0 1.5em 0 0;
+text-shadow: 0 0 2px #FFFFFF;
+}
+
+#header{
+padding: 0.5em 0 0 1.5%;
+}
+
+#nav{
+
+/*height: 6.4em;*/
+background-color: #ffad00;
+margin-bottom: 0.12em;
+}
+
+#nav ul{
+list-style-type: none;
+width: 100%;
+padding: 0;
+margin: 0;
+background-color: red;
+}
+
+#nav li{
+list-style-type: none;
+display: block;
+float: left;
+margin: 0px 0 0px 0;
+padding-top: 0.4em;
+width: 23%;
+height: 1.5em;
+position: relative;
+}
+
+#nav a{
+color: #ffffff;
+font-size: 10pt
+}
+
+.open{
+border-top: 1px solid #5b5b5b;
+background-image: url(../img/bg-button.png) no-repeat center top;
+padding: 5px 0 0 2%;
+font-weight: bold;
+}
+
+.close{
+padding-left: 2%;
+border-bottom: 1px solid #5b5b5b;
+}
+
+#nav a:href{
+color: #ffffff;
+font-size: 10pt;
+}
+
+#nav0{
+width: 100%;
+height: 1em;
+background-color: #ffad00;
+}
+
+#nav1{
+background-color: #ababab;
+width: 100%;
+height: 1.75em;
+}
+
+#nav2{
+background-color: #8c8c8c;
+width: 100%;
+height: 1.75em;
+}
+
+#nav3{
+background-color: #737373;
+width: 100%;
+height: 1.75em;
+}
+
+#nav1 li{
+background-color: #ababab;
+}
+
+#nav2 li{
+background-color: #8c8c8c;
+}
+
+#nav3 li{
+background-color: #737373;
+}
+
+#nav1 li.open{
+background: #ffad00 url(../img/bg-button.png) no-repeat center top;
+margin-top: 0.4em;
+padding-top: 0;
+}
+
+#nav2 li.open{
+background: #ababab url(../img/bg-button.png) no-repeat center top;
+margin-top: 0.4em;
+padding-top: 0;
+}
+
+#nav3 li.open{
+background: #8c8c8c url(../img/bg-button.png) no-repeat center top;
+margin-top: 0.4em;
+padding-top: 0;
+}
+
+#section{
+padding: 2%;
+background-color: #e3e3e3;
+height: 100%;
+}
+
+.bl{
+width:48.5%;
+display: block;
+
+}
+
+.articles{
+padding: 2em 0 0 0;
+clear: both;
+}
+
+#footer{
+clear: both;
+height: 1.2em;
+padding: 0.1em 0 0.1em 1.5%;
+margin: 0.1em 0 1em 0;
+background-color: #ffad00;
+}
+
+#footer a{
+margin: 0;
+color: #ffffff;
+}
+
+table#areas{
+width: 100%;
+border-collapse: collapse;
+}
+
+table#areas tr th{
+color: #000000;
+font-weight: bold;
+font-size: 11pt;
+background-color: #ffad00;
+}
+
+table#areas tr td a, table#areas tr th a{
+width: 100%;
+display: block;
+color: #000000;
+}
+
+table#areas tr:hover{
+background-color: #ffad00;
+}
+
+table#areas tr.thead:hover{
+background-color: #e3e3e3;
+}
+
+.rank{
+text-align: center;
+width: 10%;
+}
+
+#maparea{
+background-color: #ababab;
+}
+
+#forum{
+margin: 0 auto;
+width: 60%;
+}
+
+
+ul.error{
+display:block;
+background-color: #ababab;
+background-image: url(../img/error.png);
+background-repeat: no-repeat;
+background-position: left center;
+padding: 1em 1em 1em 3em ;
+border: 0.2em solid #ffad00;
+list-style-type: none;
+}
+
+ul.error li{
+color: #ffad00;
+}
+
+label{
+color: #323232;
+font-size: 10pt;
+float: right;
+font-weight: normal;              
+}
+
+.rname{
+font-size: 11pt;
+font-weight: bold;      
+}
+
+.rauthor{
+font-size: 8pt;       
+}
+
+.rgrade{
+float: right;
+font-size: 12pt;
+font-weight: bold;       
+}

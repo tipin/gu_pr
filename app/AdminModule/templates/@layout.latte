@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">    
+    <meta name="robots" content="noindex">
+    
+    <title>Administrace</title>
+      
+</head>
+
+<body>
+    <div n:foreach="$flashes as $flash" class="flash {$flash->type}">
+        {$flash->message}
+    </div>
+    
+    <div>
+        Přihlášen jako <a n:href=":Account:">{$user->getIdentity()->username}</a> (<a n:href=":Account:logout">Odhlásit se</a>)
+        <a n:href=":Homepage:" n:if="$user->isAllowed('Admin:Dashboard', 'default')">Na web</a>
+    </div>
+    
+    <h1>Administrace</h1>
+    
+    <ul>
+        <li{ifCurrent Dashboard:*} class="current"{/ifCurrent}><a n:href="Dashboard:">Nástěnka</a></li>
+        <li{ifCurrent Area:*} class="current"{/ifCurrent}><a n:href="Area:">Oblasti</a></li>
+        <li{ifCurrent Article:*} class="current"{/ifCurrent}><a n:href="Article:">Články</a></li>
+        <li{ifCurrent User:*} class="current"{/ifCurrent} n:if="$user->isAllowed('Admin:User')"><a n:href="User:">Uživatelé</a></li>
+    </ul>
+    {include #content}
+</body>
+</html>

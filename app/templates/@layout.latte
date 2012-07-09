@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head> 
+ <meta charset="UTF-8">
+ <meta name="robots" content="{$robots}" n:ifset="$robots">
+  {ifset #js}{include #js}{/ifset} 
+  
+ <script type="text/javascript" src="{$basePath}/js/netteForms.js"></script>
+
+ <link rel="stylesheet" href="{$basePath}/css/guidebook.css" type="text/css">
+ <link rel="shortcut icon" href="{$basePath}/img/favicon.ico" />
+ <title>Průvodce lezením na Jesenicku</title>
+    
+</head>
+<body{ifCurrent Homepage:*} onload="load();"{/ifCurrent}>
+    <div id="page">
+        <div id="login">
+           {if $user->isLoggedIn()}
+             <p>přihlášen: <a n:href="Account:">{$user->getIdentity()->username}</a></p> | <p><a n:href="Account:logout">Odhlásit se</a></p>
+           {else}
+             <p><a n:href="Account:login">příhlásit se</a></p>
+           {/if}
+        </div>
+        <div id="header">
+            <div n:foreach="$flashes as $flash" class="flash {$flash->type}">
+                {$flash->message}
+            </div>
+            <h1><span style="font-size: 35pt">P</span>růvodce lezením na Jesenicku</h1>
+        </div>
+        <div id="nav">
+         <div id="nav{ifCurrent Area:view}3{else}{ifCurrent Area:list}2{else}{ifCurrent Area:routes}3{else}1{/ifCurrent}{/ifCurrent}{/ifCurrent}">
+          <ul>
+            <li class="{ifCurrent Homepage:*}open{else}{ifCurrent Account:*}open{else}close{/ifCurrent}{/ifCurrent}"><a n:href="Homepage:">Mapa</a></li>
+            <li class="{ifCurrent Rule:*}open{else}close{/ifCurrent}"><a n:href="Rule:">Pravidla</a></li>
+            <li class="{ifCurrent Area:*}open{else}close{/ifCurrent}"><a n:href="Area:list rock">Lezecké oblasti</a></li>
+            <li class="{ifCurrent Forum:*}open{else}close{/ifCurrent}"><a n:href="Forum:">Diskuze</a></li>
+           </ul>
+          </div>
+             
+        
+            {include #content}
+        
+        <div id="footer">
+            <a href="http://www.javaanes.cz" onclick="window.open(this.href);return false;">&copy;&nbsp;JAVAANES</a>
+        </div>
+    </div>
+     <div id="aside">     
+   </div>  
+</body>
+</html>
